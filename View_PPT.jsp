@@ -8,12 +8,17 @@
     </head>
     <body>
         <%    
-            //            D:\Study\DAYIXIA\Java\homework\Login\build\web\
-            String path = request.getServletContext().getRealPath("/") + "/view_ppt/pics";//绝对路径
-            out.println(request.getServletContext().getRealPath("/"));
+            String Tea_ID = request.getParameter("teaid");
+            String Cou_ID = request.getParameter("couid");
+            String Sou_Name = request.getParameter("souname");
+                    
+            String rpath = "upload/"+Tea_ID+"/"+Cou_ID+"/source/"+Sou_Name;
+            
+            String path1 = request.getServletContext().getRealPath("/") + "view_ppt/pics";//绝对路径
+//            out.println(request.getServletContext().getRealPath("/"));
             String name = "";
             try { 
-                File f = new File(path);
+                File f = new File(path1);
                 if (f.isDirectory()){
                     File[] fList = f.listFiles();
                     for (int j = 0; j < fList.length; j++) {

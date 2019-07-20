@@ -8,10 +8,14 @@
     <body>
         <div class="video">
             <%
-                out.println(request.getServletContext().getRealPath("/"));
+                String Tea_ID = request.getParameter("teaid");
+                String Cou_ID = request.getParameter("couid");
+                String Sou_Name = request.getParameter("souname");
+                    
+                String path = "upload/"+Tea_ID+"/"+Cou_ID+"/source/"+Sou_Name;
                 //Ïà¶ÔÂ·¾¶
             %>
-            <video src="view_video/S04E01.mp4" controls="controls">
+            <video src="view_video/S04E01.mp4" autoplay controls="controls">
             Your browser does'n support video
             </video>
         </div>
